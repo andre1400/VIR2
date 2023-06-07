@@ -56,18 +56,24 @@ root@pve:~# python3 ./ScriptPython.py --task start --number 5
 ```
 ///OUTPUT
 ```
-Start des pentesterlabs
-ID : 200 IP : 192.168.100.143/24
-ID : 201 IP : 192.168.100.147/24
-ID : 202 IP : 192.168.100.148/24
-ID : 203 IP : 192.168.100.149/24
-ID : 204 IP : 192.168.100.150/24
-Start des machines attaquantes
-ID : 300 IP : 192.168.100.141/24
-ID : 301 IP : 192.168.100.151/24
-ID : 302 IP : 192.168.100.152/24
-ID : 303 IP : 192.168.100.153/24
-ID : 304 IP : 192.168.100.154/24
+root@pve-01:/vir2/VIR2# python3 ./ScriptPython.py --task start --number 3
+
+==Start des machines pentesterlabs==
+ID : 200 IP : 10.10.111.150/24
+Username: root Password: Pa$$w0rd
+ID : 201 IP : 10.10.111.151/24
+Username: root Password: Pa$$w0rd
+ID : 202 IP : 10.10.111.152/24
+Username: root Password: Pa$$w0rd
+
+==Start des machines attaquantes Let's GO !!!...==
+ID : 400 IP : 10.10.111.143/24
+Username: root Password: Pa$$w0rd
+ID : 401 IP : 10.10.111.153/24
+Username: root Password: Pa$$w0rd
+ID : 402 IP : 10.10.111.154/24
+Username: root Password: Pa$$w0rd
+root@pve-01:/vir2/VIR2#
 ```
 ## STOP
 /// INPUT
