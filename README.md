@@ -32,7 +32,7 @@ ansible-galaxy collection install community.mysql
 ## Creation
 /// INPUT
 ```
-root@pve:~# python3 ./ScriptPython.py --task create --number 5
+root@pve-01:/vir2/VIR2# python3 ./ScriptPython.py --task create --number 5
 ```
 /// OUTPUT
 ```
@@ -52,12 +52,10 @@ ID : 304 Created
 ## Start
 /// INPUT
 ```
-root@pve:~# python3 ./ScriptPython.py --task start --number 5
+root@pve-01:/vir2/VIR2# python3 ./ScriptPython.py --task start --number 3
 ```
 ///OUTPUT
 ```
-root@pve-01:/vir2/VIR2# python3 ./ScriptPython.py --task start --number 3
-
 ==Start des machines pentesterlabs==
 ID : 200 IP : 10.10.111.150/24
 Username: root Password: Pa$$w0rd
@@ -78,42 +76,42 @@ root@pve-01:/vir2/VIR2#
 ## STOP
 /// INPUT
 ```
-root@pve:~# python3 ./ScriptPython.py --task stop --number 5
+root@pve-01:/vir2/VIR2# python3 ./ScriptPython.py --task stop --number 3
 ```
 /// OUTPUT
 ```
-Stop des pentesterlabs
+==Stop des machines pentesterlabs==
 ID : 200 Stopped
 ID : 201 Stopped
 ID : 202 Stopped
-ID : 203 Stopped
-ID : 204 Stopped
-Stop des machines attaquantes
-ID : 300 Stopped
-ID : 301 Stopped
-ID : 302 Stopped
-ID : 303 Stopped
-ID : 304 Stopped
+
+==Stop des machines attaquantes==
+ID : 400 Stopped
+ID : 401 Stopped
+ID : 402 Stopped
 ```
 ## SUPPRESSION
 /// INPUT
 ```
-root@pve:~# python3 ./ScriptPython.py --task remove --number 5
+root@pve-01:/vir2/VIR2# python3 ./ScriptPython.py --task remove --number 3
 ```
 ///OUTPUT
 ```
-Remove some pentesterlabs
+==Remove des machines pentesterlabs==
+  Logical volume "vm-200-disk-0" successfully removed
 ID : 200 Removed
+  Logical volume "vm-201-disk-0" successfully removed
 ID : 201 Removed
+  Logical volume "vm-202-disk-0" successfully removed
 ID : 202 Removed
-ID : 203 Removed
-ID : 204 Removed
-Remove some attacking machines
-ID : 300 Removed
-ID : 301 Removed
-ID : 302 Removed
-ID : 303 Removed
-ID : 304 Removed
+
+==Remove des machine attaquantess==
+  Logical volume "vm-400-disk-0" successfully removed
+ID : 400 Removed
+  Logical volume "vm-401-disk-0" successfully removed
+ID : 401 Removed
+  Logical volume "vm-402-disk-0" successfully removed
+ID : 402 Removed
 ```
 ## Lister
 *Ca va lister uniquement l'environnement lab de l'étudiant, pour tous lister : pct list*
