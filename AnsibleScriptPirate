@@ -1,0 +1,69 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: update & upgrade
+      apt:
+        upgrade: yes
+        update_cache: yes
+
+    - name: enable Root Login
+      lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: '^PermitRootLogin'
+        line: "PermitRootLogin yes"
+        state: present
+        backup: yes
+      notify:
+        - restart ssh
+
+    - name: install nmap
+      apt:
+        name: nmap
+        state: latest
+
+    - name: install sqlmap
+      apt:
+        name: sqlmap
+        state: latest
+
+    - name: install curl
+      apt:
+        name: curl
+        state: latest
+
+    - name: install lynx
+      apt:
+        name: lynx
+        state: latest
+
+    - name: CLI (Command Line Interface)
+      shell: |
+        echo "Why using python?"
+        echo "Python is already installed on most Linux machines and it's easier to read and maintain than a bash script"
+        echo "Install requirement"
+        echo "wrapper.py"
+
+    - name: install netdiscover
+      apt:
+        name: netdiscover
+        state: latest
+
+    - name: install crunch
+      apt:
+        name: crunch
+        state: latest
+#   - name: install patator
+#     apt:
+#       name: patator
+#        state: latest
+
+    - name: install weevely
+      apt:
+        name: weevely
+        state: latest
+  handlers:
+    - name: restart ssh
+      systemd:
+        name: sshd
+        state: restarted
