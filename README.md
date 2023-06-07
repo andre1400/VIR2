@@ -28,3 +28,99 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source .bashrc
 ansible-galaxy collection install community.mysql
 ```
+# Utilisation des contenaires
+## Creation
+/// INPUT
+```
+root@pve:~# python3 ./ScriptPython.py --task create --number 5
+```
+/// OUTPUT
+```
+Creation des pentesterlabs
+ID : 200 Created
+ID : 201 Created
+ID : 202 Created
+ID : 203 Created
+ID : 204 Created
+Creation des machines attaquantes
+ID : 300 Created
+ID : 301 Created
+ID : 302 Created
+ID : 303 Created
+ID : 304 Created
+```
+## Start
+/// INPUT
+```
+root@pve:~# python3 ./ScriptPython.py --task start --number 5
+```
+///OUTPUT
+```
+Start des pentesterlabs
+ID : 200 IP : 192.168.100.143/24
+ID : 201 IP : 192.168.100.147/24
+ID : 202 IP : 192.168.100.148/24
+ID : 203 IP : 192.168.100.149/24
+ID : 204 IP : 192.168.100.150/24
+Start des machines attaquantes
+ID : 300 IP : 192.168.100.141/24
+ID : 301 IP : 192.168.100.151/24
+ID : 302 IP : 192.168.100.152/24
+ID : 303 IP : 192.168.100.153/24
+ID : 304 IP : 192.168.100.154/24
+```
+## STOP
+/// INPUT
+```
+root@pve:~# python3 ./ScriptPython.py --task stop --number 5
+```
+/// OUTPUT
+```
+Stop des pentesterlabs
+ID : 200 Stopped
+ID : 201 Stopped
+ID : 202 Stopped
+ID : 203 Stopped
+ID : 204 Stopped
+Stop des machines attaquantes
+ID : 300 Stopped
+ID : 301 Stopped
+ID : 302 Stopped
+ID : 303 Stopped
+ID : 304 Stopped
+```
+## SUPPRESSION
+/// INPUT
+```
+root@pve:~# python3 ./ScriptPython.py --task remove --number 5
+```
+///OUTPUT
+```
+Remove some pentesterlabs
+ID : 200 Removed
+ID : 201 Removed
+ID : 202 Removed
+ID : 203 Removed
+ID : 204 Removed
+Remove some attacking machines
+ID : 300 Removed
+ID : 301 Removed
+ID : 302 Removed
+ID : 303 Removed
+ID : 304 Removed
+```
+## Lister
+*Ca va lister uniquement l'environnement lab de l'étudiant, pour tous lister : pct list*
+
+/// INPUT
+```
+root@pve:~# python3 ./ScriptPython.py --task list --number 2
+```
+///OUTPUT
+```
+Listing all containers :
+200 stopped penterlabT
+201 stopped penterlabT
+300 stopped attackerT
+301 stopped attackerT
+```
