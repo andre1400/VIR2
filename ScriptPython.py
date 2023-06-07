@@ -39,7 +39,7 @@ def remove(id):
 
 def main(ARGV):
     pentesterlab = 103  # To edit with the correct ids
-    attacking = 102  # To edit with the correct ids
+    attacking = 100  # To edit with the correct ids
 
     if FLAGS.task is None:
         print("Invalid argument")
