@@ -38,8 +38,8 @@ def remove(id):
     return out
 
 def main(ARGV):
-    pentesterlab = 102  # To edit with the correct ids
-    attacking = 105  # To edit with the correct ids
+    pentesterlab = 103  # To edit with the correct ids
+    attacking = 102  # To edit with the correct ids
 
     if FLAGS.task is None:
         print("Invalid argument")
@@ -56,7 +56,7 @@ def main(ARGV):
         return
     
     if FLAGS.task == "start":
-        print("\n==Start some pentesterlabs==")
+        print("\n==Start des machines pentesterlabs==")
         for x in range(200, 200 + FLAGS.number):
             out = startLxc(x)
             # Wait for dhcp
@@ -68,8 +68,8 @@ def main(ARGV):
             else:
                 print(f'Error starting container {x}')
 
-        print("\n==Start some attacking machines==")
-        for x in range(300, 300 + FLAGS.number):
+        print("\n==Start des machines attaquantes==")
+        for x in range(400, 400 + FLAGS.number):
             out = startLxc(x)
             # Wait for lxc to boot, to get all ips
             time.sleep(7)
@@ -83,7 +83,7 @@ def main(ARGV):
         return
 
     if FLAGS.task == "stop":
-        print("\n==Stop some pentesterlabs==")
+        print("\n==Stop des machines pentesterlabs==")
         for x in range(200, 200 + FLAGS.number):
             out = stopLxc(x)
             if out == 0:
@@ -91,8 +91,8 @@ def main(ARGV):
             else:
                 print(f'Error stopping container {x}')
 
-        print("\n==Stop some attacking machines==")
-        for x in range(300, 300 + FLAGS.number):
+        print("\n==Stop des machines attaquantes==")
+        for x in range(400, 400 + FLAGS.number):
             out = stopLxc(x)
             if out == 0:
                 print(f"ID : {x} Stopped")
@@ -102,26 +102,26 @@ def main(ARGV):
         return
 
     if FLAGS.task == "create":
-        print("\n==Creating some pentesterlabs==")
+        print("\n==Creation des machines pentesterlabs==")
         for x in range(200, 200 + FLAGS.number):
             out = clone(pentesterlab, x)
             print(f"ID : {x} Created")
 
-        print("\n==Creating some attacking machines==")
-        for x in range(300, 300 + FLAGS.number):
+        print("\n==Creation des machines attaquantes==")
+        for x in range(400, 400 + FLAGS.number):
             out = clone(attacking, x)
             print(f"ID : {x} Created")
 
         return
 
     if FLAGS.task == "remove":
-        print("\n==Remove some pentesterlabs==")
+        print("\n==Remove des machines pentesterlabs==")
         for x in range(200, 200 + FLAGS.number):
             out = remove(x)
             print(f"ID : {x} Removed")
 
-        print("\n==Remove some attacking machines==")
-        for x in range(300, 300 + FLAGS.number):
+        print("\n==Remove des machines attaquantes==")
+        for x in range(400, 400 + FLAGS.number):
             out = remove(x)
             print(f"ID : {x} Removed")
 
