@@ -33,7 +33,7 @@ ansible-galaxy collection install community.mysql
 ```
 root@pve-01:~# pct clone 100 {newId} --full --storage lxc-storage
 ```
-### attrapper la nouvelle ip
+### Attrapper la nouvelle ip
 ```
 root@pve-01:~# pct exec {newId} -- ip addr | grep eth0 | grep inet | awk '{print $2}'
 10.10.111.148/24
