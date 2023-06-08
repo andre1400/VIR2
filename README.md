@@ -50,7 +50,7 @@ root@pve-01:~# ssh-keygen root@ip
 ```
 ### Edition du .yaml et du .ini file
 ```
-root@pve-01:~# ansible-playbook -i inventoryPirate.ini AnsibleScriptPirate.yaml
+root@pve-01:~# ansible-playbook -i inventoryPirate.ini AnsibleScriptPirate.yaml --ask-pass
 ```
 ### Convertion en template
 ```
