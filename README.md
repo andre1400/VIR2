@@ -9,7 +9,11 @@ sudp apt install git
 
 ```python
 git glone https://github.com/andre1400/VIR2.git
-chmod +x **/{AnsibleScriptLAB.yaml, AnsibleScriptPirate.yaml, ScriptPython.py}
+```
+### Rendre executable les .yaml
+```
+find /vir2/VIR2 -name "AnsibleScriptLAB.yaml" -exec chmod +x {} \;
+find /vir2/VIR2 -name "AnsibleScriptPirate.yaml" -exec chmod +x {} \;
 ```
 
 ### Installation du module python qu’on aura besoin pour notre script plus tard
