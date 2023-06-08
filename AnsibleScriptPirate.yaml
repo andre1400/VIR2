@@ -53,6 +53,7 @@
       apt:
         name: crunch
         state: latest
+
 #   - name: install patator
 #     apt:
 #       name: patator
@@ -62,6 +63,12 @@
       apt:
         name: weevely
         state: latest
+
+    - name: Installer le paquet cowsay
+      apt:
+        name: cowsay
+        state: present
+
   handlers:
     - name: restart ssh
       systemd:
