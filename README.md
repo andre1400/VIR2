@@ -9,6 +9,7 @@ Clonage du repo
 
 ```python
 git glone https://github.com/andre1400/VIR2.git
+chmod +x **/{AnsibleScriptLAB.yaml, AnsibleScriptPirate.yaml, ScriptPython.py}
 ```
 
 Installation du module python qu’on aura besoin pour notre script plus tard
