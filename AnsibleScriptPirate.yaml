@@ -39,10 +39,7 @@
 
     - name: CLI (Command Line Interface)
       shell: |
-        echo "Why using python?"
-        echo "Python is already installed on most Linux machines and it's easier to read and maintain than a bash script"
-        echo "Install requirement"
-        echo "wrapper.py"
+        echo "Install des requirements"
 
     - name: install netdiscover
       apt:
