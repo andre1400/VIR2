@@ -91,10 +91,10 @@ ID : 400 Stopped
 ID : 401 Stopped
 ID : 402 Stopped
 ```
-## SUPPRESSION
+## SUPPRESSION (STOP + SUPPRESSION)
 /// INPUT
 ```
-root@pve-01:/vir2/VIR2# python3 ./ScriptPython.py --task remove --number 3
+root@pve-01:/vir2/VIR2# python3 ./ScriptPython.py --task erase --number 3
 ```
 ///OUTPUT
 ```
