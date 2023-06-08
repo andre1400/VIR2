@@ -29,6 +29,39 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source .bashrc
 ansible-galaxy collection install community.mysql
 ```
+## Create new template
+```
+root@pve-01:~# pct clone 100 {newId} --full --storage lxc-storage
+```
+### attrapper la nouvelle ip
+```
+root@pve-01:~# pct exec {newId} -- ip addr | grep eth0 | grep inet | awk '{print $2}'
+10.10.111.148/24
+Start ansible machine & get his ip
+
+root@pve-01:~# pct start 101
+root@pve-01:~# pct exec 101 -- ip addr | grep eth0 | grep inet | awk '{print $2}'
+192.168.100.140/24
+root@pve-01:~# ssh root@ip
+```
+### Echange de clé pour la nouvelle machine
+```
+root@pve-01:~# ssh-keygen root@ip
+```
+### Edition du .yaml et du .ini file
+```
+root@pve-01:~# ansible-playbook -i inventoryPirate.ini AnsibleScriptPirate.yaml
+```
+### Convertion en template
+```
+root@pve-01:~# pct template {newId}
+```
+### Edition du ScriptPython.py avec les id's
+```
+def main(ARGV):
+    pentesterlab = 102
+    attacking = 100
+```
 # Utilisation des contenaires
 ## Creation
 /// INPUT
