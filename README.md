@@ -33,13 +33,13 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source .bashrc
 ansible-galaxy collection install community.mysql
 ```
+
+### Demarrage
+```
+root@pve-01:~ pct start 100
+```
 ### Attrapper la nouvelle ip
 ```
-root@pve-01:~# pct exec 100 -- ip addr | grep eth0 | grep inet | awk '{print $2}'
-10.10.111.175/24
-Start ansible machine & get his ip
-
-root@pve-01:~# pct start 100
 root@pve-01:~# pct exec 100 -- ip addr | grep eth0 | grep inet | awk '{print $2}'
 10.10.111.175/24
 root@pve-01:~# ssh root@ip
