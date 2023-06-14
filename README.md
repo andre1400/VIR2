@@ -131,7 +131,7 @@ ID : 402 Stopped
 ## SUPPRESSION (STOP + SUPPRESSION)
 /// INPUT
 ```
-root@pve-01:/vir2/VIR2# python3 ./ScriptPython.py --task destroy --number 3
+root@pve-01:/vir2/VIR2# python3 ./ScriptPython.py --task erase --number 3
 ```
 ///OUTPUT
 ```
