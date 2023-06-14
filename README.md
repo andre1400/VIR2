@@ -33,20 +33,20 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source .bashrc
 ansible-galaxy collection install community.mysql
 ```
+### Attrapper la nouvelle ip
+```
+root@pve-01:~# pct exec 100 -- ip addr | grep eth0 | grep inet | awk '{print $2}'
+10.10.111.175/24
+Start ansible machine & get his ip
+
+root@pve-01:~# pct start 100
+root@pve-01:~# pct exec 100 -- ip addr | grep eth0 | grep inet | awk '{print $2}'
+10.10.111.175/24
+root@pve-01:~# ssh root@ip
+```
 ## Create new template
 ```
 root@pve-01:~# pct clone 100 {newId} --full --storage lxc-storage
-```
-### Attrapper la nouvelle ip
-```
-root@pve-01:~# pct exec {newId} -- ip addr | grep eth0 | grep inet | awk '{print $2}'
-10.10.111.163/24
-Start ansible machine & get his ip
-
-root@pve-01:~# pct start 101
-root@pve-01:~# pct exec 101 -- ip addr | grep eth0 | grep inet | awk '{print $2}'
-10.10.111.163/24
-root@pve-01:~# ssh root@ip
 ```
 ### Echange de clé pour la nouvelle machine
 ```
